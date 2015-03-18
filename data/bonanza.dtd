@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Order Placement Entity Constraints for Bob's Burgers
+-->
+
+<!--
+    An order must have a customer and one or more burgers,
+    may be delivery and have special instructions.
+-->
+<!ELEMENT order (customer, delivery?, burger+, special?)>
+<!ATTLIST order
+    type (eatin|takeout|delivery) #REQUIRED
+>
+
+<!-- A customer is id'd by their name -->
+<!ELEMENT customer (#PCDATA)>
+
+<!-- Delivery instructions -->
+<!ELEMENT delivery (#PCDATA)>
+
+<!-- Special Instructions for the order -->
+<!ELEMENT special (#PCDATA)>
+
+<!--
+    A burger has a patty, may have cheeses, toppings, sauce.
+    May have special instructions. May be named by the customer.
+-->
+<!ELEMENT burger  (patty, cheeses?, topping*, sauce*, instructions?, name?)>
+
+<!-- A patty may come in various types -->
+<!ELEMENT patty (#PCDATA)>
+<!ATTLIST patty
+    type (beef|pork|turkey|bison|vege) "beef"
+>
+
+<!-- Two cheeses may be applied, one on top, on on bottom. -->
+<!ELEMENT cheeses EMPTY>
+<!ATTLIST cheeses
+    top (american|swiss|jack|blue|gruyere|gouda|aged|goat|brie) #IMPLIED
+    bottom (american|swiss|jack|blue|gruyere|gouda|aged|goat|brie) #IMPLIED
+>
+
+<!-- A topping must have a type. -->
+<!ELEMENT topping (#PCDATA)>
+<!ATTLIST topping
+    type (lettuce|tomato|dill|mushrooms|salsa|bacon|chilies|avacado|egg|onions) #REQUIRED
+>
+
+<!-- A sauce must have a type. -->
+<!ELEMENT sauce EMPTY>
+<!ATTLIST sauce
+    type (ketchup|mustard|mayo) #REQUIRED
+>
+
+<!-- Instructions can be provided for the specific burger. -->
+<!ELEMENT instructions (#PCDATA)>
+
+<!-- A burger can be named with a text name -->
+<!ELEMENT name (#PCDATA)>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    A Burger order for me, Calvin Rempel
+-->
+
+<!DOCTYPE order SYSTEM 'bonanza.dtd'>
+
+<order type="delivery">
+    <customer>Calvin</customer>
+    <burger>
+        <patty type="turkey" />
+        <cheeses top="aged" bottom="blue" />
+        
+        <topping type="lettuce" />
+        <topping type="tomato" />
+        <topping type="chilies" />
+        
+        <sauce type="ketchup" />
+        <sauce type="mustard" />
+        
+        <instructions>
+            Please slather with copious amounts of peanut butter.
+        </instructions>
+        
+        <name>
+            The Barf Burger 3000
+        </name>
+    </burger>
+</order>

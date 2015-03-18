@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Order #1 - Jim orders one burger to stay
+-->
+
+<!DOCTYPE order SYSTEM 'bonanza.dtd'>
+
+<order type="eatin">
+    <customer>Jim</customer>
+    <burger>
+        <patty type="beef" />
+        <cheeses top="gruyere" />
+        <topping type="tomato" />
+        <sauce type="ketchup" />
+        <sauce type="mustard" />
+    </burger>
+</order>
